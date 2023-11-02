@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #23303b;
+  --secondary-color: #fff;
+  --accent-color: #456efe;
+
+  --font-fam: "Montserrat", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  background-color: var(--accent-color);
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(69, 110, 254, 0.5);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-fam);
+}
+
+.navbar h3 {
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 550px;
+  background-color: rgb(255, 255, 255, 0.033);
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.balance p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main-balance,
+.loan-balance {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-balance,
+.loan-balance span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.balance .currency {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.transact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.transact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.transact-input {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.transact-input input {
+  height: 90%;
+  background-color: rgb(255, 255, 255, 0.033);
+  border: none;
+  color: var(--secondary-color);
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.error {
+  font-size: 13px;
+  margin: 5px 0;
+  color: red;
+}
+
+.loan {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.loan-input p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.loan-input .currency {
+  font-size: 16px;
+  font-weight: 400;
+}
