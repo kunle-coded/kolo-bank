@@ -13,7 +13,9 @@ function Main({
   error,
 }) {
   const action =
-    status === "opened" ? { type: "close" } : { type: "open", payload: 100 };
+    status === "opened"
+      ? { type: "closeAccount" }
+      : { type: "openAccount", payload: 500 };
 
   return (
     <main className="main">
@@ -37,14 +39,14 @@ function Main({
             Withdraw
           </Transact>
           <Loan
-            dispatch={() => dispatch({ type: "loan", payload: 5000 })}
+            dispatch={() => dispatch({ type: "requestLoan", payload: 5000 })}
             loan={loan}
           >
             Request Loan
           </Loan>
 
           {loan > 0 && (
-            <Button onClick={() => dispatch({ type: "pay loan" })}>
+            <Button onClick={() => dispatch({ type: "payLoan" })}>
               Pay Loan
             </Button>
           )}

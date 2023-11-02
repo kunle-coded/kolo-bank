@@ -2,8 +2,7 @@ import Button from "./Button";
 import Error from "./Error";
 
 function Transact({ dispatch, amountDispatch, amount, error, children }) {
-  const inputType =
-    children === "Deposit" ? "deposit input" : "withdrawal input";
+  const inputType = children === "Deposit" ? "depositInput" : "withdrawalInput";
 
   return (
     <section className="transact-section">

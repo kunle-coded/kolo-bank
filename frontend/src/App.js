@@ -13,7 +13,7 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "open":
+    case "openAccount":
       return {
         ...state,
         balance: action.payload,
@@ -35,32 +35,33 @@ function reducer(state, action) {
         error: tooHigh ? "Invalid amount" : state.error,
         withdrawalAmount: "",
       };
-    case "loan":
+    case "requestLoan":
       return {
         ...state,
         loan: action.payload,
         balance: state.balance + action.payload,
       };
-    case "pay loan":
+    case "payLoan":
       const valid = state.balance >= state.loan;
       return {
         ...state,
         balance: valid ? state.balance - state.loan : state.balance,
         loan: valid ? state.loan - state.loan : state.loan,
       };
-    case "deposit input":
+    case "depositInput":
       return {
         ...state,
         depositAmount: action.payload,
       };
-    case "withdrawal input":
+    case "withdrawalInput":
       return {
         ...state,
         withdrawalAmount: action.payload,
         error: "",
       };
-    case "close":
-      return initialState;
+    case "closeAccount":
+      const isCloseable = state.balance === 0 && state.loan === 0;
+      return isCloseable ? initialState : { ...state };
     default:
       throw new Error("Unknown action");
   }

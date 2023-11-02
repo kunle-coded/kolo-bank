@@ -39,7 +39,11 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
 button:hover {
+  background-color: rgb(69, 110, 254, 0.5);
+}
+button:disabled {
   background-color: rgb(69, 110, 254, 0.5);
 }
 
